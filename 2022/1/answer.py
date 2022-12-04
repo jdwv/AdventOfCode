@@ -26,4 +26,11 @@ for x in range(len(ElfCalories)):
     ElfTotals[ElfName] = TotalElfCalories
 
 # Return max value from dict
-print("Result - {0} has {1} calories".format(max(ElfTotals, key=ElfTotals.get), max(ElfTotals.values())))
+print("Part - One")
+print("Result: {0} has {1} calories".format(max(ElfTotals, key=ElfTotals.get), max(ElfTotals.values())))
+
+# Part two
+print("Part - Two")
+sorted_ElfTotals = sorted(ElfTotals.items(), key=lambda x:x[1], reverse=True)
+print(dict(sorted_ElfTotals[0:3]))
+print("Result: ", sum(dict(sorted_ElfTotals[0:3]).values()))
