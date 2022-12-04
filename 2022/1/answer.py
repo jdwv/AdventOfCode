@@ -1,21 +1,11 @@
 #!/usr/bin/env python3
 
-ElfCalorieInput = """
-1000
-2000
-3000
+import os
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname, 'input.txt')
 
-4000
-
-5000
-6000
-
-7000
-8000
-9000
-
-10000
-"""
+with open(filename, "r") as file:
+    ElfCalorieInput = file.read()
 
 # Strip leading/trailing newlines
 ElfCalorieInput = ElfCalorieInput.strip('\n') 
