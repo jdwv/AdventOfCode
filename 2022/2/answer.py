@@ -24,7 +24,7 @@ points = {
 Games = [x.split() for x in input]
 
 # Scores were X=Rock, Y=Paper, Z=Scissors
-guess1 = {
+ConvertMap = {
     'X': 'A',
     'Y': 'B',
     'Z': 'C'
@@ -34,7 +34,7 @@ TotalPoints = 0
 
 for x in Games:
     player1 = x[0]
-    player2 = guess1[x[1]]
+    player2 = ConvertMap[x[1]]
     
     print("##########\nGame: ", x)
     print("Player1: {0} | Player2: {1}".format(player1, player2))
@@ -57,23 +57,8 @@ for x in Games:
     else:
         print(">>>>>{0} vs {1}<<<<<".format(player1, player2))
 
-    GamePoints = points[(guess1[x[1]])] + BonusPoints
+    GamePoints = points[(ConvertMap[x[1]])] + BonusPoints
     TotalPoints += GamePoints
-    print("Points: {0} + {1} = {2}".format(points[(guess1[x[1]])], BonusPoints, GamePoints))
+    print("Points: {0} + {1} = {2}".format(points[(ConvertMap[x[1]])], BonusPoints, GamePoints))
     print("Total Points: ", TotalPoints)
-    print(x[0], points[x[0]])
-    print(guess1[x[1]], "({0})".format(x[1]), points[(guess1[x[1]])] )
 
-# Scores were X=Paper, Y=Scissors, Z=Rock
-guess2 = {
-    'X': 'B',
-    'Y': 'C',
-    'Z': 'A'
-}
-
-# Scores were X=Scissors, Y=Rock, Z=Paper
-guess3 = {
-    'X': 'C',
-    'Y': 'A',
-    'Z': 'B'
-}
