@@ -27,14 +27,14 @@ ttgJtRGJQctTZtZT
 CrZsJsPPZsGzwwsLwLmpwMDw""".split("\n")
 
 Total = 0
-
-for t in Data:
-    MidPoint = int((len(t) / 2))
-    FirstCompartment = set(t[0:MidPoint])
-    SecondCompartment = set(t[MidPoint:])
-    CommonCharacter = list(FirstCompartment.intersection(SecondCompartment))
-    print("Compartment String: ", "".join(FirstCompartment), " | ", "".join(SecondCompartment))
-    print("Common Char: {0} = {1}".format(CommonCharacter[0], PriorityMap[CommonCharacter[0]]))
-    Total += PriorityMap[CommonCharacter[0]]
+#Data = Test
+Size = 3
+GroupCounter = 1
+for x in range(0, len(Data), Size):
+    ElfBadgeGroup = [set(x) for x in Data[x:(x + Size)]]
+    ElfBadgeGroupIdentifier = list(set.intersection(*ElfBadgeGroup))
+    Total += PriorityMap[ElfBadgeGroupIdentifier[0]]
+    print("Group {0}: {1} = {2}".format(GroupCounter, ElfBadgeGroupIdentifier[0], PriorityMap[ElfBadgeGroupIdentifier[0]]))
+    GroupCounter += 1
 
 print("\nTotal priority: ", Total)
