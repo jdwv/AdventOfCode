@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 
 import os
-dirname = os.path.dirname(__file__)
-filename = os.path.join(dirname, 'input.txt')
+DirName = os.path.dirname(__file__)
+FileName = os.path.join(DirName, 'input.txt')
 
-with open(filename, "r") as file:
-    input = file.read()
+with open(FileName, "r") as File:
+    Data = [line.strip() for line in File]
+
+Test = """1
+2
+3
+4""".split("\n")
